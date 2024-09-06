@@ -7,7 +7,8 @@ import { Observable, tap } from 'rxjs';
 })
 export class AuthService {
   private apiUrl = 'http://localhost:8090/api/auth';
-  private tokenKey = 'auth-token';
+  private tokenKey = 'authToken';
+  private nameKey = 'userName';
 
   constructor(private http: HttpClient) {}
 
@@ -21,6 +22,18 @@ export class AuthService {
 
   getToken(): string | null {
     return localStorage.getItem(this.tokenKey);
+  }
+
+  setToken(token: string): void {
+    localStorage.setItem(this.tokenKey, token);
+  }
+
+  setName(name: string): void {
+    localStorage.setItem(this.nameKey, name);
+  }
+
+  getName(): string | null {
+    return localStorage.getItem(this.nameKey);
   }
 
   isLoggedIn(): boolean {

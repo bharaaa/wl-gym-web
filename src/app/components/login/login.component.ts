@@ -19,9 +19,20 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   onSubmit() {
     this.authService.login(this.credentials).subscribe({
-      next: () => {
-        console.log("success login")
-        this.router.navigate(['']);
+      next: (res: any) => {
+        const token = res.data.token;
+        this.authService.setToken(token);
+
+        const name = res.data.name;
+        this.authService.setName(name);
+
+        if (res.data.role == 'ADMIN') {
+          this.router.navigate(['admin/dashboard']);
+        } else if (res.data.role == 'MEMBER') {
+          this.router.navigate(['member/dashboard']);
+        } else {
+          this.router.navigate(['trainer/dashboard']);
+        }
       },
       error: (err) => {
         console.log(err.error.responseMessage);
@@ -49,13 +60,13 @@ export class LoginComponent implements OnInit, OnDestroy {
         strokeDashoffset: {
           value: 0,
           duration: 700,
-          easing: 'easeOutQuart'
+          easing: 'easeOutQuart',
         },
         strokeDasharray: {
           value: '240 1386',
           duration: 700,
-          easing: 'easeOutQuart'
-        }
+          easing: 'easeOutQuart',
+        },
       });
     });
 
@@ -66,13 +77,13 @@ export class LoginComponent implements OnInit, OnDestroy {
         strokeDashoffset: {
           value: -336,
           duration: 700,
-          easing: 'easeOutQuart'
+          easing: 'easeOutQuart',
         },
         strokeDasharray: {
           value: '240 1386',
           duration: 700,
-          easing: 'easeOutQuart'
-        }
+          easing: 'easeOutQuart',
+        },
       });
     });
 
@@ -83,13 +94,13 @@ export class LoginComponent implements OnInit, OnDestroy {
         strokeDashoffset: {
           value: -730,
           duration: 700,
-          easing: 'easeOutQuart'
+          easing: 'easeOutQuart',
         },
         strokeDasharray: {
           value: '530 1386',
           duration: 700,
-          easing: 'easeOutQuart'
-        }
+          easing: 'easeOutQuart',
+        },
       });
     });
   }
