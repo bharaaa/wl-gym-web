@@ -1,20 +1,69 @@
-<div class="bg-zinc-900 text-white py-20 h-[500vh]">
+<div class="bg-dark-grey text-white px-10 py-10 h-[400vh]">
+  <div class="flex flex-row mb-36 justify-between items-center">
+    <button
+      class="flex flex-row hover:tracking-widest transition-all duration-300"
+    >
+      <img src="../../../assets/WLlogo.png" alt="" class="h-9 w-auto mr-3" />
+      <p class="font-teko font-semibold text-4xl">Wake & Lift</p>
+    </button>
+    <button (click)="navigateToLogin()">
+      <div
+        class="px-5 py-1 bg-transparent border-4 border-sport-green hover:bg-sport-green hover:text-black transition-colors duration-300"
+      >
+        <p class="font-teko font-medium tracking-wide text-2xl">Login</p>
+      </div>
+    </button>
+  </div>
+  <div class="flex flex-col px-20 mb-52">
+    <div class="flex flex-row items-center justify-between">
+      <h1 class="text-9xl font-teko font-semibold tracking-widest">WAKE</h1>
+      <div class="bg-light-blue w-[100vh] h-5"></div>
+    </div>
+    <div class="flex flex-row items-center justify-between">
+      <div class="bg-light-blue w-[60vh] h-5"></div>
+      <h1 class="text-9xl font-teko font-semibold">&</h1>
+      <div class="bg-sport-green w-[60vh] h-5"></div>
+    </div>
+    <div class="flex flex-row items-center justify-between">
+      <div class="bg-sport-green w-[110vh] h-5"></div>
+      <h1 class="text-9xl font-teko font-semibold tracking-widest">LIFT</h1>
+    </div>
+  </div>
   <div class="container mx-auto text-center">
-    <h1 class="text-7xl font-teko font-medium">Welcome to Wake & Lift</h1>
-    <p class="mt-4 font-mono">
-      Join the best gym experience with professional trainers and exciting
-      classes.
-    </p>
-    <button
-      class="mt-6 bg-blue-600 px-4 py-2 rounded hover:bg-blue-500 font-mono mx-5"
-    >
-      Get Started
-    </button>
-    <button
-      class="mt-6 bg-blue-600 px-4 py-2 rounded hover:bg-blue-500 font-mono mx-5"
-      (click)="navigateToLogin()"
-    >
-      Login
-    </button>
+    <div class="flex flex-row justify-evenly items-center my-14">
+      <div class="text-left">
+        <h1 class="text-7xl font-teko font-medium">Rise and Thrive</h1>
+        <p class="mt-4 font-mono">Ignite your potential with Wake & Lift.</p>
+      </div>
+      <img
+        src="../../../assets/gymimage1crop.jpg"
+        alt="gymimage"
+        class="h-48 w-[80vh] border-8 border-transparent hover:border-sport-green transition-colors duration-300"
+      />
+    </div>
+    <div class="flex flex-row justify-evenly items-center my-14">
+      <img
+        src="../../../assets/gymimage2crop.jpg"
+        alt="gymimage"
+        class="h-48 w-[80vh] border-8 border-transparent hover:border-sport-green transition-colors duration-300"
+      />
+      <div class="text-left">
+        <h1 class="text-7xl font-teko font-medium">Awaken Your Strength</h1>
+        <p class="mt-4 font-mono">Find your power and redefine your limits.</p>
+      </div>
+    </div>
+    <div class="flex flex-row justify-evenly items-center my-14">
+      <div class="text-left">
+        <h1 class="text-7xl font-teko font-medium">Lift Beyond Limits</h1>
+        <p class="mt-4 font-mono">
+          Push your boundaries and reach new heights.
+        </p>
+      </div>
+      <img
+        src="../../../assets/gymimage3crop.jpg"
+        alt="gymimage"
+        class="h-48 w-[80vh] border-8 border-transparent hover:border-sport-green transition-colors duration-300"
+      />
+    </div>
   </div>
 </div>
