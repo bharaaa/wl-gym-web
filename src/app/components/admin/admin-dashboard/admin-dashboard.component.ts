@@ -24,6 +24,14 @@ export class AdminDashboardComponent {
     }
   }
 
+  handleRegisterMember(): void {
+    this.router.navigate(['admin/register-member']);
+  }
+
+  handleRegisterTrainer(): void {
+    this.router.navigate(['admin/register-trainer']);
+  }
+
   onLogOut(): void {
     this.authService.logout();
     this.router.navigate(['']);

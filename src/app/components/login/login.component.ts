@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from '../../services/auth/auth.service';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import anime from 'animejs/lib/anime.es.js';
 
 @Component({
@@ -81,23 +81,6 @@ export class LoginComponent implements OnInit, OnDestroy {
         },
         strokeDasharray: {
           value: '240 1386',
-          duration: 700,
-          easing: 'easeOutQuart',
-        },
-      });
-    });
-
-    document.querySelector('#submit')?.addEventListener('focus', () => {
-      if (this.current) this.current.pause();
-      this.current = anime({
-        targets: 'path',
-        strokeDashoffset: {
-          value: -730,
-          duration: 700,
-          easing: 'easeOutQuart',
-        },
-        strokeDasharray: {
-          value: '530 1386',
           duration: 700,
           easing: 'easeOutQuart',
         },
